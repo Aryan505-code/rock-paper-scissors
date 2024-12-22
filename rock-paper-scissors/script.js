@@ -24,48 +24,48 @@ let result='';
  function resultCal(playerMove,randomMove){
     if(playerMove==='rock'){
         if(randomMove==='rock'){
-            result='tie';
+            result='TIE';
             scoreBoard.ties+=1;
         }
         else if(randomMove==='paper'){
-            result='lose';
+            result='YOU LOSE';
             scoreBoard.losses+=1;
         }
         else{
-            result='win';
+            result='YOU WIN';
             scoreBoard.wins+=1;
         }
     }
     else if(playerMove==='paper'){
         if(randomMove==='rock'){
-            result='win';
+            result='YOU WIN';
             scoreBoard.wins+=1;
         }
         else if(randomMove==='paper'){
-            result='tie';
+            result='TIE';
             scoreBoard.ties+=1;
         }
         else{
-            result='lose';
+            result='YOU LOSE';
             scoreBoard.losses+=1;
         }
     }
     else if(playerMove==='scissors'){
         if(randomMove==='rock'){
-            result='lose';
+            result='YOU LOSE';
             scoreBoard.losses+=1;
         }
         else if(randomMove==='paper'){
-            result='win';
+            result='YOU WIN';
             scoreBoard.wins+=1;
         }
         else{
-            result='tie';
+            result='TIE';
             scoreBoard.ties+=1;
         }
     }
     localStorage.setItem('scoreBoard',JSON.stringify(scoreBoard));
-
+    document.querySelector('.js-result').innerHTML=`${result}`
     resultDisplay(playerMove,randomMove);
 
     score();
@@ -93,9 +93,9 @@ function resultDisplay(playerMove,randomMove){
     };
     moves.innerHTML=
     `
-    you
+    YOU
     ${icons[playerMove]}
     ${icons[randomMove]}
-    robo
+    ROBO
     `
 }
