@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rock paper and scissors game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="options">
+        <button onclick="let randomMove=roboMove(); resultCal('rock',randomMove) "><i class="fa-solid fa-hand-fist"></i></button>
+        <button onclick=" randomMove=roboMove(); resultCal('paper',randomMove)"><i class="fa-solid fa-hand"></i></button>
+        <button onclick=" randomMove=roboMove(); resultCal('scissors',randomMove)"><i class="fa-solid fa-hand-peace"></i></button>
+    </div>
+    <p class="js-moves display"> </p>
+    <p class="js-score board"></p>
+    <div class="reset">
+        <button onclick="
+            scoreBoard.wins=0
+            scoreBoard.losses=0
+            scoreBoard.ties=0
+            localStorage.removeItem(scoreBoard);
+            score();
+            ">reset score</button>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
